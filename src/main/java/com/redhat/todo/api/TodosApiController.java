@@ -47,6 +47,6 @@ public class TodosApiController implements TodosApi {
 
     @Override
     public ResponseEntity<List<Todo>> getTodos(@RequestParam(value = "completed", required = false) @Valid Boolean completed) {
-        return rt.exchange(backendUrl, HttpMethod.GET, null, new ParameterizedTypeReference<List<Todo>>(){} );
+        return rt.exchange(backendUrl + "/todos", HttpMethod.GET, null, new ParameterizedTypeReference<List<Todo>>(){} );
     }
 }
